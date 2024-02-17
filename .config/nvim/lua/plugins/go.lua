@@ -34,13 +34,6 @@ return {
             gopls = {
               buildFlags = { "-tags=tests" },
               analyses = {
-                -- defaults
-                -- fieldalignment = true,
-                -- nilness = true,
-                -- unusedparams = true,
-                -- unusedwrite = true,
-                -- useany = true,
-                -- custom
                 unusedvariable = true,
                 shadow = true,
               },
