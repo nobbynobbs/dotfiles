@@ -1,5 +1,5 @@
 .PHOHY: stow
 
 stow:
-	stow -d ./ -t ~/.config .config
+	stow -d ./ -t ~/.config config
 
