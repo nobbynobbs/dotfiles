@@ -37,6 +37,7 @@ return {
                 unusedvariable = true,
                 shadow = true,
               },
+              templateExtensions = { "tmpl" },
             },
           },
         },

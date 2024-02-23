@@ -1,0 +1,24 @@
+# bsp stack float
+yabai -m config                                  \
+                layout              bsp          \
+                auto_padding        on           \
+                window_placement    second_child \
+                                                 \
+                top_padding         0            \
+                bottom_padding      0            \
+                left_padding        0            \
+                right_padding       0            \
+                window_gap          0            \
+                                                 \
+                mouse_follows_focus off          \
+                mouse_modifier      alt          \
+                mouse_action1       move         \
+                mouse_action2       resize       \
+                mouse_drop_action   swap         \
+
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Microsoft Teams" manage=off
+yabai -m rule --add app="^Microsoft Outlook" manage=off
+
