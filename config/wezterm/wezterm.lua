@@ -6,7 +6,7 @@ local os = require("os")
 local config = {}
 
 config.hide_tab_bar_if_only_one_tab = true
-config.font = wezterm.font("FiraCode Nerd Font")
+config.font = wezterm.font({ family = "FiraCode Nerd Font", harfbuzz_features = { "calt=0", "clig=0", "liga=0" } })
 config.font_size = 14
 config.default_prog = { "tmux" }
 config.audible_bell = "Disabled"
