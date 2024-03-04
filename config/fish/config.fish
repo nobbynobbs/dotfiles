@@ -8,4 +8,6 @@ set --export --prepend PATH "$HOME/.local/bin"
 
 alias vim="nvim"
 
+source ~/.config.fish
+
 set -g fish_key_bindings fish_vi_key_bindings
