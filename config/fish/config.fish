@@ -8,6 +8,12 @@ set --export --prepend PATH "$HOME/.local/bin"
 
 alias vim="nvim"
 
-source ~/.config.fish
+if test -e ~/.config.fish
+    source ~/.config.fish
+end
+
+if test -e ~/.local/bin/mise
+    ~/.local/bin/mise activate fish | source
+end
 
 set -g fish_key_bindings fish_vi_key_bindings
