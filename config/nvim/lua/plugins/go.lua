@@ -12,7 +12,7 @@ return {
     "leoluz/nvim-dap-go",
     opts = {
       delve = {
-        build_flags = { "-tags=tests" },
+        build_flags = { "-tags=tests,mobile" },
       },
     },
   },
@@ -32,7 +32,7 @@ return {
         gopls = {
           settings = {
             gopls = {
-              buildFlags = { "-tags=tests" },
+              buildFlags = { "-tags=tests,mobile" },
               analyses = {
                 unusedvariable = true,
                 shadow = true,
