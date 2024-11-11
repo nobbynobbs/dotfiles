@@ -54,7 +54,8 @@
     "lua",
     "js",
     "py",
-    "sh"
+    "sh",
+    "txt"
   ],
   "localKeys": [
     {

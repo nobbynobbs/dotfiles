@@ -9,12 +9,30 @@ return {
     },
   },
   {
-    "leoluz/nvim-dap-go",
-    opts = {
-      delve = {
-        build_flags = { "-tags=tests,mobile" },
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "leoluz/nvim-dap-go",
+      opts = {
+        delve = {
+          build_flags = "-tags=tests,mobile,web",
+        },
       },
     },
+    opts = function()
+      local dap = require("dap")
+      local dotenv = require("dotenv")
+      local env = dotenv.readEnv("build/local/.env")
+
+      dap.configurations.go = {
+        {
+          type = "go",
+          name = ".env",
+          program = "${file}",
+          request = "launch",
+          env = env,
+        },
+      }
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -32,7 +50,7 @@ return {
         gopls = {
           settings = {
             gopls = {
-              buildFlags = { "-tags=tests,mobile" },
+              buildFlags = { "-tags=tests,mobile,web" },
               analyses = {
                 unusedvariable = true,
                 shadow = true,
@@ -55,6 +73,23 @@ return {
             },
           },
           filetypes = { "go" },
+        },
+      },
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    opts = {
+      adapters = {
+        ["neotest-golang"] = {
+          -- Here we can set options for neotest-golang, e.g.
+          go_test_args = { "-v", "-race", "-count=1", "-timeout=60s", "-tags=tests,mobile,web" },
+          dap_go_enabled = true,
+          dap_go_opts = {
+            delve = {
+              build_flags = "-tags=tests,mobile,web",
+            },
+          },
         },
       },
     },

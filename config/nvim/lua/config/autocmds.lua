@@ -16,3 +16,12 @@
 --     vim.wo.relativenumber = true
 --   end,
 -- })
+
+-- Disable autoformat for
+-- python, yaml, markdown
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "python", "yaml", "markdown" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})

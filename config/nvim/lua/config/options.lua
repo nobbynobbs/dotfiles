@@ -4,5 +4,9 @@
 
 local opt = vim.opt
 opt.spelllang = { "en", "ru" }
+opt.langmap =
+  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 
 -- opt.colorcolumn = "80,120"
+local g = vim.g
+g.lazyvim_python_lsp = "basedpyright"

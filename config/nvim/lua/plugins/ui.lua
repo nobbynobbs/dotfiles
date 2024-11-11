@@ -2,7 +2,7 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
-      -- ntifications appears and disappears in normal way
+      -- notifications appears and disappears in normal way
       stages = "static",
     },
   },
