@@ -17,3 +17,6 @@ if test -e ~/.local/bin/mise
 end
 
 set -g fish_key_bindings fish_vi_key_bindings
+zoxide init fish | source
+
+__auto_source_venv
